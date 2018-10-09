@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" rel="stylesheet">
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: 'PingFang SC', 'Source Han Sans', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* .gray-fix>* {
+      background-color: #393B43;
+    } */
+
+    .margin-tb {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero is-dark">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Demo
+        </h1>
+        <h2 class="subtitle">
+          {{ notice }}
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <div class="container is-fluid margin-tb">
+    <!-- Swiper -->
+    <div class="swiper-container swiper-container-horizontal">
+      <div class="swiper-wrapper gray-fix">
+        <div class="swiper-slide swiper-slide-active"><img src="{{ imgUrls[0] | safe }}"></div>
+        <div class="swiper-slide swiper-slide-next"><img src="{{ imgUrls[1] | safe }}"></div>
+        <div class="swiper-slide"><img src="{{ imgUrls[2] | safe }}"></div>
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+      <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide"
+        aria-disabled="true"></div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        页面浏览量 {{ count }} | <a href="https://help.aliyun.com/document_detail/60137.html">ACM帮助文档</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/{{ jqueryVersion }}/jquery.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.0/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    $(function () {
+      var swiper = new Swiper('.swiper-container', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

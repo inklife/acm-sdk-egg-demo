@@ -25,8 +25,6 @@ module.exports = appInfo => {
       namespace: '需要修改', // acm 控制台查看
       accessKey: '需要修改', // acm 控制台查看
       secretKey: '需要修改', // acm 控制台查看
-      dataId: 'demo',
-      group: 'DEFAULT_GROUP',
     },
     // 是否加载到 app 上，默认开启
     app: true,

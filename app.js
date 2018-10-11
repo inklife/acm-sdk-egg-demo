@@ -1,11 +1,11 @@
+'use strict';
 // {app_root}/app.js
 module.exports = app => {
   app.beforeStart(async () => {
-    // 手动触发初始化
-    await app.acm.$init();
     // 获取redis配置
+    const demoConfig = await app.acm.getConfig('demo', 'DEFAULT_GROUP', 'json');
     // { host: '127.0.0.1', port: 6379 , password: '', db: 0 }
-    const redisConfig = app.acm.demo.redis;
-    app.rd = app.redis.createInstance(redisConfig);
+    const connPara = demoConfig.redis;
+    app.rd = app.redis.createInstance(connPara);
   });
 };

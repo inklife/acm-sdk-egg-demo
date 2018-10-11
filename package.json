@@ -1,10 +1,10 @@
 {
   "name": "acm-sdk-egg-demo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An egg.js demo for acm-sdk-nodejs",
   "dependencies": {
     "egg": "^2.2.1",
-    "egg-acm": "^1.0.7",
+    "egg-acm": "^2.0.0",
     "egg-redis": "^2.0.0",
     "egg-scripts": "^2.5.0",
     "egg-view-nunjucks": "^2.2.0"
